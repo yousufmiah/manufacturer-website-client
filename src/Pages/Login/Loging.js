@@ -35,20 +35,20 @@ const Login = () => {
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   // jwt token==============
-  // const [token] = useToken(user || googleUser);
+  const [token] = useToken(user || googleUser);
 
   let signInErrorMessage;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  // useEffect(() => {
-  // jwt token=================
-  //   if (token) {
-  //     // console.log(token);
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [token, from, navigate]);
+  useEffect(() => {
+    // jwt token=================
+    if (token) {
+      // console.log(token);
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
 
   // ===============
 
@@ -190,7 +190,7 @@ const Login = () => {
             </small>
           </p>
 
-          {/* =====sign in with google */}
+          {/* =====sign in with google===== */}
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}

@@ -31,7 +31,7 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   //usetoken form hooks=============
-  // const [token] = useToken(user || googleUser);
+  const [token] = useToken(user || googleUser);
 
   // navigate===========
   const navigate = useNavigate();
@@ -51,14 +51,14 @@ const SignUp = () => {
       </p>
     );
   }
-  // if (user || googleUser) {
-  //   console.log(user || googleUser);
-  //   // navigate("/appointment");
-  // }
-  // if (token) {
-  //   // console.log(token);
-  //   navigate("/appointment");
-  // }
+  if (user || googleUser) {
+    console.log(user || googleUser);
+    // navigate("/appointment");
+  }
+  if (token) {
+    // console.log(token);
+    navigate("/appointment");
+  }
 
   const onSubmit = async (data) => {
     console.log(data);
