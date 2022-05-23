@@ -1,18 +1,45 @@
 [
 {
-    "name":"wego scooter1",
-    "description": "Easy to drive",
-    "quantity": 8,
-    "price": "Tk 250000",
-    "img":"https://i.ibb.co/brDqVwn/honda1.jpg",       
-    "supplier":"Mr. Karim"
+    "name":"Mouse",
+    "description": "Nice and easy to use",
+    "quantity": 500,
+    "price": "300",
+    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
 }, 
 {
-    "name":"wego scooter2",
-    "description": "Easy to drive.",
-    "quantity": 6,
-    "price": "Tk 300000",
-    "img":"https://i.ibb.co/K51B1BY/honda2.jpg",
-    "supplier":"Mr. Rahim"
+    "name":"Mouse",
+    "description": "Nice and easy to use",
+    "quantity": 500,
+    "price": "300",
+    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+},
+{
+    "name":"Mouse",
+    "description": "Nice and easy to use",
+    "quantity": 500,
+    "price": "300",
+    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+},
+{
+    "name":"Mouse",
+    "description": "Nice and easy to use",
+    "quantity": 500,
+    "price": "300",
+    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+},
+{
+    "name":"Mouse",
+    "description": "Nice and easy to use",
+    "quantity": 500,
+    "price": "300",
+    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+},
+{
+    "name":"Mouse",
+    "description": "Nice and easy to use",
+    "quantity": 500,
+    "price": "300",
+    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
 }
+
 ]

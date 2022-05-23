@@ -1,20 +1,20 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
-// import useAdmin from "../../hooks/useAdmin";
+import useAdmin from "../../hooks/useAdmin";
 import auth from "../../firebase.init";
 
 const DashBoard = () => {
   const [user] = useAuthState(auth);
-  // const [admin] = useAdmin();
+  const [admin] = useAdmin();
   return (
     <div className="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content ">
         {/* <!-- Page content here --> */}
-        <h2 className="text-3xl font-bold text-purple-500">
+        {/* <h2 className="text-3xl font-bold text-purple-500">
           Welcome to your Dashboard
-        </h2>
+        </h2> */}
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">

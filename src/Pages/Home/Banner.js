@@ -1,71 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import computer from "../../assets/images/computer.jpg";
 
 const Banner = () => {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
   return (
-    <div class="carousel  w-full">
-      <div h-screen id="slide1" class="carousel-item relative w-full">
-        <img
-          src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2"
-          class="w-full"
-        />{" "}
-        /
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" class="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" class="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" class="carousel-item relative w-full">
-        <img
-          src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB"
-          class="w-full"
-        />{" "}
-        /
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" class="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" class="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide3" class="carousel-item relative w-full">
-        <img
-          src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6"
-          class="w-full"
-        />{" "}
-        /
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" class="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" class="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide4" class="carousel-item relative w-full">
-        <img
-          src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693"
-          class="w-full"
-        />{" "}
-        /
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" class="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" class="btn btn-circle">
-            ❯
-          </a>
+    <div>
+      <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content flex-col md:flex-row">
+          <div className="w-full md:w-1/2">
+            <img src={computer} className=" rounded-lg shadow-2xl" />
+          </div>
+          <div className="w-full md:w-1/2">
+            <h1 class="text-5xl font-bold">Welcome to ...</h1>
+            <p class="py-6">
+              We provide your best choice of computer accessories, which are
+              made our factory to improve your experience and feel better in the
+              modern Technology, Thanks for with us.
+            </p>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
         </div>
       </div>
     </div>

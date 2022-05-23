@@ -10,8 +10,8 @@ import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import googleLogo from "../../assets/social-icon/google.png";
 import useToken from "../../hooks/useToken";
+import googleLogo from "../../assets/social-icon/google.png";
 
 const Login = () => {
   const [resetEmail, setResetEmail] = useState("");
@@ -50,8 +50,6 @@ const Login = () => {
     }
   }, [token, from, navigate]);
 
-  // ===============
-
   // loading spinner==================
   if (loading || googleLoading) {
     return <Loading></Loading>;
@@ -66,7 +64,7 @@ const Login = () => {
 
   // onsubmit=======================
   const onSubmit = (data) => {
-    // console.log(data);
+    console.log(data);
     setResetEmail(data.email);
     signInWithEmailAndPassword(data.email, data.password);
   };
@@ -173,8 +171,8 @@ const Login = () => {
           {/* ======to signup======= */}
           <p>
             <small>
-              New to Doctors Portal?
-              <Link className="text-blue-500" to="/signup">
+              New to JM Computer?
+              <Link className="text-blue-600" to="/signup">
                 Create New Account
               </Link>
             </small>
@@ -184,13 +182,16 @@ const Login = () => {
           <p>
             <small>
               Forget Password?
-              <button onClick={resetPassword} className="text-blue-500">
+              <button
+                onClick={handleSubmit(onSubmit)}
+                className="text-blue-600"
+              >
                 Reset Password
               </button>
             </small>
           </p>
 
-          {/* =====sign in with google===== */}
+          {/* =====sign in with google */}
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}

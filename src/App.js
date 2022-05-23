@@ -6,7 +6,7 @@ import History from "./Pages/Dashboard/History";
 import Reviews from "./Pages/Dashboard/Reviews";
 import Users from "./Pages/Dashboard/Users";
 import Home from "./Pages/Home/Home";
-import Login from "./Pages/Login/Loging";
+import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/Login/SignUp";
 import Navbar from "./Pages/Shared/Navbar";
 
