@@ -26,6 +26,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About</NavLink>
       </li>
+      <li>
+        <NavLink to="/profile">Profile</NavLink>
+      </li>
       {user && (
         <li>
           <NavLink to="/dashboard">Dashboard</NavLink>
@@ -78,15 +81,18 @@ const Navbar = () => {
                     </label>
                   </a>
                 </li>
-                <li className="mt-20">
+                {/* <li className="mt-20">
                   <a className="justify-between">
                     Profile
                     <span className="badge ">New</span>
                   </a>
+                </li> */}
+                <li className="mt-16 text-2xl">
+                  <Link to="/myitems" className="text-xl">
+                    My Items
+                  </Link>
                 </li>
-                <li>
-                  <a>Settings</a>
-                </li>
+
                 <li>
                   <button
                     onClick={logout}

@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "../Contact/ContactForm";
+import Review from "../Dashboard/Review";
 import Feature from "../Feature/Feature";
 import Items from "../Items/Items";
 import Footer from "../Shared/Footer";
@@ -12,6 +13,7 @@ const Home = () => {
       <Items></Items>
       <Feature></Feature>
       <ContactForm></ContactForm>
+      <Review></Review>
       {/* <Info></Info>
       <Services></Services>
       <Service2></Service2>

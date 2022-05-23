@@ -3,7 +3,7 @@ import "./App.css";
 import About from "./Pages/About/About";
 import DashBoard from "./Pages/Dashboard/DashBoard";
 import History from "./Pages/Dashboard/History";
-import Reviews from "./Pages/Dashboard/Reviews";
+
 import Users from "./Pages/Dashboard/Users";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -16,6 +16,12 @@ import "react-toastify/dist/ReactToastify.css";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import Blogs from "./Pages/Blogs/Blogs";
 import NotFound from "./Pages/Shared/NotFount";
+import Purchase from "./Pages/Items/Purchase";
+import ViewReview from "./Pages/Dashboard/ViewReview";
+import Review from "./Pages/Dashboard/Review";
+import MyItems from "./Pages/MyItems/MyItems";
+import Allitems from "./Pages/Items/Allitems";
+import Profile from "./Pages/Profile";
 // import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
@@ -27,12 +33,18 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="about" element={<About />} />
+        <Route path="/purchase" element={<Purchase />} />
+        <Route path="review" element={<Review />} />
+        <Route path="viewReview" element={<ViewReview />} />
+        <Route path="allitems" element={<Allitems />} />
+        <Route path="myitems" element={<MyItems />} />
+        <Route path="profile" element={<Profile />} />
 
         <Route path="dashboard" element={<DashBoard />}>
-          <Route path="review" element={<Reviews></Reviews>}></Route>
           <Route path="history" element={<History></History>}></Route>
           {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
           <Route path="users" element={<Users></Users>}></Route>
+
           {/* <Route
             path="addDoctor"
             element={

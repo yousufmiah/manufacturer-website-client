@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useHookData from "../../hooks/useHookData";
 import Item from "./Item";
 // import Item from "./item";
@@ -31,12 +31,13 @@ const Items = () => {
         </div>
 
         <div className="text-center">
-          <button
+          <Link
+            to="/allitems"
             onClick={() => handleAllItems()}
             className="btn btn-secondary text-primary text-bold text-2xl px-5 my-5"
           >
             All Items
-          </button>
+          </Link>
         </div>
       </div>
     </div>

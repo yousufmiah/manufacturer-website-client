@@ -1,5 +1,9 @@
 import React from "react";
 import { HiOutlineSparkles } from "react-icons/hi";
+import { BsFlag } from "react-icons/bs";
+import { GrProjects } from "react-icons/gr";
+import { ImHappy } from "react-icons/im";
+import { VscFeedback } from "react-icons/vsc";
 
 const Feature = () => {
   return (
@@ -20,30 +24,30 @@ const Feature = () => {
             </div>
           </div>
           <div className="flex flex-col md:flex-row md:justify-evenly">
-            <div className="text-center  ">
-              <div className="text-4xl">
-                <HiOutlineSparkles />
+            <div className="text-center flex flex-col items-center ">
+              <div className="text-4xl mb-3">
+                <BsFlag />
               </div>
               <h2 className="text-3xl font-bold text-primary">72</h2>
               <h4 className="text-lg text-primary">Countries</h4>
             </div>
-            <div>
-              <div className="text-4xl">
-                <HiOutlineSparkles />
+            <div className="text-center flex flex-col items-center ">
+              <div className="text-4xl mb-3">
+                <GrProjects />
               </div>
               <h2 className="text-3xl font-bold text-primary">353+</h2>
               <h4 className="text-lg text-primary">Complete Projects</h4>
             </div>
-            <div>
-              <div className="text-4xl">
+            <div className="text-center flex flex-col items-center ">
+              <div className="text-4xl mb-3">
                 <HiOutlineSparkles />
               </div>
               <h2 className="text-3xl font-bold text-primary">273+</h2>
               <h4 className="text-lg text-primary">Happy Clients</h4>
             </div>
-            <div>
-              <div className="text-4xl">
-                <HiOutlineSparkles />
+            <div className="text-center flex flex-col items-center ">
+              <div className="text-4xl mb-3">
+                <VscFeedback />
               </div>
               <h2 className="text-3xl font-bold text-primary">432</h2>
               <h4 className="text-lg text-primary">Feedbacks</h4>

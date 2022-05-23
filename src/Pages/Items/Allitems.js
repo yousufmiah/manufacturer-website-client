@@ -1,8 +1,20 @@
+import React from "react";
+
+const Allitems = () => {
+  return (
+    <div>
+      <h3>All Items</h3>
+    </div>
+  );
+};
+
+export default Allitems;
+
 // import { useEffect, useState } from "react";
 // // import useHookData from "../../Hooks/useHookData";
 // import Item from "../Item/Item";
 
-// const AllItems = () => {
+// const Allitems = () => {
 //   // const [items, setItems] = useHookData([]);
 //   const [items, setItems] = useState([]);
 //   console.log(items);
@@ -53,4 +65,4 @@
 //   );
 // };
 
-// export default AllItems;
+// export default Allitems;

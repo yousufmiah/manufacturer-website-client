@@ -1,8 +1,26 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const item = ({ item }) => {
   const { _id, name, description, quantity, img, price } = item;
+  // const [order, setOrder] = useState(orderQuantity);
+  // const navigate = useNavigate();
 
+  // const placeOrder = () => {
+  //   if (order >= 10 && order <= availableQuantity) {
+  //     const newOrder = part;
+  //     newOrder.quantity = order;
+  //     newOrder.email = email;
+  //     newOrder.time = Date().toLocaleString();
+  //     fetch(`http://localhost:5000/orders`, {
+  //       method: "POST",
+  //       headers: {
+  //         "content-type": "application/json",
+  //       },
+  //       body: JSON.stringify(newOrder),
+  //     });
+  //   }
+  // };
   return (
     <div>
       <div class="card bg-base-100 shadow-xl">
@@ -22,7 +40,9 @@ const item = ({ item }) => {
             class="input input-bordered w-full text-center"
           />
           <div class="card-actions ">
-            <button class="mt-3 btn btn-primary w-full ">Order</button>
+            <Link to="/purchase" class="mt-3 btn btn-primary w-full ">
+              Place Order
+            </Link>
           </div>
         </div>
       </div>
