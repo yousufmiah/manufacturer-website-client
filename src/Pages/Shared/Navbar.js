@@ -82,12 +82,7 @@ const Navbar = () => {
                     </label>
                   </a>
                 </li>
-                {/* <li className="mt-20">
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge ">New</span>
-                  </a>
-                </li> */}
+
                 <li className="mt-12 text-2xl">
                   <Link to="/myitems" className="text-xl">
                     My Items

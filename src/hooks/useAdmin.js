@@ -5,6 +5,7 @@ const useAdmin = (user) => {
   const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     const email = user?.email;
+    console.log(email);
 
     if (email) {
       fetch(`https://safe-anchorage-26846.herokuapp.com/admin/${email}`, {

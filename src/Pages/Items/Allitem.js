@@ -28,9 +28,6 @@ const AllItem = ({ item }) => {
           alert("Order Successfully");
           navigate("/purchase");
         });
-      // } else {
-      //   alert("below items");
-      //   return;
     }
   };
   return (

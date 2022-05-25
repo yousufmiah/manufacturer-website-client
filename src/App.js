@@ -20,7 +20,6 @@ import NotFound from "./Pages/Shared/NotFount";
 
 import ViewReview from "./Pages/Dashboard/ViewReview";
 import Review from "./Pages/Dashboard/Review";
-import MyItems from "./Pages/MyItems/MyItems";
 
 import Profile from "./Pages/Profile";
 import Portfolio from "./Pages/Portfolio";
@@ -45,7 +44,6 @@ function App() {
         <Route path="viewReview" element={<ViewReview />} />
         <Route path="allitems" element={<AllItems></AllItems>}></Route>
 
-        <Route path="myitems" element={<MyItems />} />
         <Route path="profile" element={<Profile />} />
         <Route path="portfolio" element={<Portfolio />} />
 
@@ -55,10 +53,6 @@ function App() {
 
           <Route path="history" element={<History></History>}></Route>
           <Route path="additem" element={<AddItem></AddItem>}></Route>
-          {/* <Route
-            path="manageitems"
-            element={<ManageItems></ManageItems>}
-          ></Route> */}
 
           {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
 
@@ -70,14 +64,14 @@ function App() {
               </RequireAuth>
             }
           ></Route>
-          {/* <Route
+          <Route
             path="manageitems"
             element={
               <RequireAdmin>
                 <ManageItems></ManageItems>
               </RequireAdmin>
             }
-          ></Route> */}
+          ></Route>
         </Route>
 
         <Route path="login" element={<Login />} />

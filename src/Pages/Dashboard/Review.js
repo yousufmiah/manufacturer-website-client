@@ -54,7 +54,7 @@ const Review = () => {
     <div class="card my-20 w-full bg-base-200 shadow-xl">
       <div class="card-body">
         <div className="text-center">
-          <div className="text-center text-center mx-auto w-1/2 mt-5">
+          <div className="text-center mx-auto w-1/2 mt-5">
             <div>
               <h2 className="text-4xl text-secondary font-bold">
                 Reviews Section

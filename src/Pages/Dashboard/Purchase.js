@@ -50,7 +50,6 @@ const Purchase = () => {
               <th scope="col">Description</th>
               <th scope="col">Quantity</th>
               <th scope="col">Unit Price</th>
-              <th scope="col">Total Price</th>
               <th scope="col">Update</th>
               <th scope="col">Cancel</th>
             </tr>

@@ -14,12 +14,6 @@ const Home = () => {
       <Feature></Feature>
       <ContactForm></ContactForm>
       <Review></Review>
-      {/* <Info></Info>
-      <Services></Services>
-      <Service2></Service2>
-      <MakeAppointment></MakeAppointment>
-      <Testimonials></Testimonials>
-      <Contact></Contact> */}
       <Footer></Footer>
     </div>
   );

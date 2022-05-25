@@ -2,7 +2,6 @@ import React from "react";
 import { HiOutlineSparkles } from "react-icons/hi";
 import { BsFlag } from "react-icons/bs";
 import { GrProjects } from "react-icons/gr";
-import { ImHappy } from "react-icons/im";
 import { VscFeedback } from "react-icons/vsc";
 
 const Feature = () => {

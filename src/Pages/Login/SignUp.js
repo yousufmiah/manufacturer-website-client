@@ -25,7 +25,7 @@ const SignUp = () => {
 
   // sign in by email and password============= and email verification
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    useCreateUserWithEmailAndPassword(auth);
 
   // updating name==================
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -51,13 +51,10 @@ const SignUp = () => {
       </p>
     );
   }
-  if (user || googleUser) {
-    // console.log(user || googleUser);
-    // navigate("/appointment");
-  }
+
   if (token) {
     // console.log(token);
-    navigate("/appointment");
+    navigate("/dashboard");
   }
 
   const onSubmit = async (data) => {
@@ -89,10 +86,6 @@ const SignUp = () => {
                     value: true,
                     message: "Name is required",
                   },
-                  //   pattern: {
-                  //     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  //     message: "Provide a valid Email",
-                  //   },
                 })}
               />
               <label className="label">
@@ -101,11 +94,11 @@ const SignUp = () => {
                     {errors.name.message}
                   </span>
                 )}
-                {/* {errors.email?.type === "pattern" && (
+                {errors.email?.type === "pattern" && (
                   <span className="label-text-alt text-red-500">
                     {errors.email.message}
                   </span>
-                )} */}
+                )}
               </label>
             </div>
             {/* ========name end========= */}
@@ -177,41 +170,6 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-
-            {/* ======password end===== */}
-            {/* ======confirm-password start===== */}
-            {/* <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Confirm Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-              className="input input-bordered w-full max-w-xs"
-                {...register("password", {
-                  required: {
-                    value: true,
-                    message: "Password is required",
-                  },
-                  minLength: {
-                    value: 6,
-                    message: "Must be 6 character or longer",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.password?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-              </label>
-            </div> */}
 
             {/* ======confirm-password end===== */}
             {signInErrorMessage}

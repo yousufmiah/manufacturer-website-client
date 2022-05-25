@@ -6,22 +6,22 @@ import auth from "../../firebase.init";
 
 const DashBoard = () => {
   const [user] = useAuthState(auth);
-  const [admin] = useAdmin();
+  const [admin] = useAdmin(user);
+
   return (
     <div className="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content ">
         {/* <!-- Page content here --> */}
-        {/* <h2 className="text-3xl font-bold text-purple-500">
+        <h2 className="text-4xl text-center  font-bold text-secondary">
           Welcome to your Dashboard
-        </h2> */}
+        </h2>
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">
         <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
-
           <li>
             <Link to="/dashboard/purchase">Purchase</Link>
           </li>
@@ -29,20 +29,21 @@ const DashBoard = () => {
             <Link to="/dashboard/history">History</Link>
           </li>
           <li>
-            <Link to="/dashboard/additem">Add Item</Link>
+            <Link to="/dashboard/allusers">All Users</Link>
           </li>
 
-          {/* {admin && ( */}
-          <>
-            <li>
-              <Link to="/dashboard/allusers">All Users</Link>
-            </li>
+          {/* is admin to show link */}
+          {admin && (
+            <>
+              <li>
+                <Link to="/dashboard/additem">Add Item</Link>
+              </li>
 
-            <li>
-              <Link to="/dashboard/manageItems">Manage Items</Link>
-            </li>
-          </>
-          {/* )} */}
+              <li>
+                <Link to="/dashboard/manageItems">Manage Items</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
