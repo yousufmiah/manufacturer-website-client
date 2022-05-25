@@ -1,58 +1,143 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ImFacebook2 } from "react-icons/im";
+import { FaTwitterSquare } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
+import { FaPinterestSquare } from "react-icons/fa";
+import { ImInstagram } from "react-icons/im";
+import { ImBehance2 } from "react-icons/im";
+import { FaMedium } from "react-icons/fa";
 
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
-    <footer className="footer p-10 bg-base-300 text-base-content">
-      <div>
-        <span className="footer-title">Services</span>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </div>
-      <div>
-        <span className="footer-title">Company</span>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </div>
-      <div>
-        <span className="footer-title">Social</span>
-        <div className="grid grid-flow-col gap-4">
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-            </svg>
+    <footer>
+      <div className="footer py-16 p-10 bg-base-200 text-base-content justify-around">
+        <div>
+          <span className=" text-2xl text-primary font-bold">Services</span>
+          <a className="text-lg text-black-700 ">Branding</a>
+          <a className="text-lg text-black-700 ">Design</a>
+          <a className="text-lg text-black-700 ">Marketing</a>
+          <a className="text-lg text-black-700 ">Advertisement</a>
+        </div>
+        <div>
+          <span className=" text-2xl text-primary font-bold">Information</span>
+          <Link to="/about" className="text-lg text-blue-700 link-hover">
+            About us
+          </Link>
+          <Link to="/contact" className="text-lg text-blue-700 link-hover">
+            Contact
+          </Link>
+          <Link to="/portfolio" className="text-lg text-blue-700 link-hover">
+            Portfolio
+          </Link>
+          <Link to="/blogs" className="text-lg text-blue-700 link-hover">
+            Blogs
+          </Link>
+        </div>
+        <div>
+          <span className=" text-2xl text-primary font-bold">Social</span>
+          <a
+            target="blank"
+            href="https://www.facebook.com/yousufmiahm/"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <ImFacebook2 />
           </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-            </svg>
+          <a
+            target="blank"
+            href="https://twitter.com/yousufmiahbd"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <FaTwitterSquare />
           </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-            </svg>
+          <a
+            target="blank"
+            href="https://www.linkedin.com/in/yousufmiah/"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <BsLinkedin />
           </a>
+          <a
+            target="blank"
+            href="https://www.pinterest.com/yousufmiahm/"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <FaPinterestSquare />
+          </a>
+          <a
+            target="blank"
+            href="https://www.instagram.com/yousufmiahm/"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <ImInstagram />
+          </a>
+          <a
+            target="blank"
+            href="https://www.behance.net/yousufmiahm"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <ImBehance2 />
+          </a>
+          <a
+            target="blank"
+            href="https://medium.com/@yousufbdm"
+            className="text-3xl text-blue-700 cursor-pointer "
+          >
+            <FaMedium />
+          </a>
+          <div className="grid grid-flow-col gap-4"></div>
+        </div>
+        <div>
+          <h2 className="text-2xl text-primary font-bold"> Others sites:</h2>
+          <a
+            className="text-lg text-blue-700 link-hover"
+            target="blank"
+            href="https://www.yousufmiah.com/"
+          >
+            www.yousufmiah.com
+          </a>
+          <a
+            className="text-lg text-blue-700 link-hover"
+            target="blank"
+            href="https://selfer.yousufmiah.com/"
+          >
+            www.selfer.com
+          </a>
+
+          <a
+            className="text-lg text-blue-700 link-hover"
+            target="blank"
+            href="https://homeseo.yousufmiah.com/"
+          >
+            www.homeseo.com
+          </a>
+          <a
+            className="text-lg text-blue-700 link-hover"
+            target="blank"
+            href="https://bd-tour-c7c18.web.app/"
+          >
+            www.bdtour..com
+          </a>
+          <a
+            className="text-lg text-blue-700 link-hover"
+            target="blank"
+            href="https://honda-app-91b97.web.app/"
+          >
+            www.honda.com
+          </a>
+          <a
+            className="text-lg text-blue-700 link-hover"
+            target="blank"
+            href="https://watch-zone-yousuf.netlify.app/"
+          >
+            www.watch-zone.com
+          </a>
+          <p className=" mt-10 text-red-700 copy">
+            Copyright @ {year} Yousuf Miah
+          </p>
         </div>
       </div>
     </footer>

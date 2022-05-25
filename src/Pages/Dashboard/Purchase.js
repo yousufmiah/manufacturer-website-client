@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Purchase = () => {
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
+  console.log(orders);
 
   useEffect(() => {
     fetch("https://safe-anchorage-26846.herokuapp.com/get-orders-items")
@@ -92,16 +93,29 @@ const Purchase = () => {
               );
             })}
           </tbody>
-          <div>
-            <h2>
-              Price:
-              {orders.reduce(
-                (n, { quantity, price }) => n + quantity * price,
-                0
-              )}
-            </h2>
-          </div>
         </table>
+        <div className="mx-auto w-full text-xl font-bold">
+          <div>
+            <div className="flex justify-around">
+              <h2>
+                Total quantity :
+                {orders.reduce((n, { quantity }) => n + quantity, 0)}
+              </h2>
+              <h2>
+                Total Price : Tk
+                {orders.reduce(
+                  (n, { quantity, price }) => n + quantity * price,
+                  0
+                )}
+              </h2>
+            </div>
+            <div>
+              <Link to="/dashboard/placeorder" className="btn btn-primary">
+                Place Order
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

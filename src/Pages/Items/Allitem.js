@@ -26,8 +26,10 @@ const AllItem = ({ item }) => {
         .then((res) => res.json())
         .then((data) => {
           alert("Order Successfully");
-          navigate("/purchase");
+          navigate("/dashboard/purchase");
         });
+    } else {
+      alert("below items or out of available quantity");
     }
   };
   return (
@@ -40,8 +42,12 @@ const AllItem = ({ item }) => {
           <h2 class="card-title text-2xl font-bold">{name}</h2>
           <p>{description}</p>
           <div className="w-full flex flex-col md:flex-row md:justify-between">
-            <small>Avaliable Quantiry: {quantity}</small>
-            <small>Price Per Unit Tk: {price}</small>
+            <small>
+              <strong>Avaliable Quantiry: {quantity}</strong>
+            </small>
+            <small>
+              <strong>Price Per Unit Tk: {price}</strong>
+            </small>
           </div>
           <input
             onBlur={(e) => setOrder(e.target.value)}

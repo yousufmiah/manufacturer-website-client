@@ -5,31 +5,37 @@ import auth from "../../firebase.init";
 
 const Item = ({ item }) => {
   const { _id, name, description, quantity, img, price } = item;
-  const [order, setOrder] = useState(10);
+  const [order, setOrder] = useState(0);
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
 
   const placeOrder = () => {
-    if (order >= 10 && order <= quantity) {
-      const newOrder = item;
-      newOrder.quantity = order;
-      newOrder.email = user?.email;
-      newOrder.time = Date().toLocaleString();
+    if (order) {
+      if (order >= 10 && order <= quantity) {
+        const newOrder = item;
+        newOrder.quantity = +order;
+        newOrder.email = user?.email;
+        newOrder.time = Date().toLocaleString();
 
-      fetch(`https://safe-anchorage-26846.herokuapp.com/orders-item`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newOrder),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          alert("Order Successfully");
-          navigate("/dashboard/purchase");
-        });
+        fetch(`https://safe-anchorage-26846.herokuapp.com/orders-item`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newOrder),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert("Order Successfully");
+            navigate("/dashboard/purchase");
+          });
+      } else {
+        alert("below items or out of available quantity");
+      }
+    } else if (item.quantity) {
+      alert("Already exist.");
     } else {
-      alert("below items or out of available quantity");
+      alert("Please enter quantity.");
     }
   };
   return (
@@ -42,8 +48,12 @@ const Item = ({ item }) => {
           <h2 class="card-title text-2xl font-bold">{name}</h2>
           <p>{description}</p>
           <div className="w-full flex flex-col md:flex-row md:justify-between">
-            <small>Avaliable Quantiry: {quantity}</small>
-            <small>Price Per Unit Tk: {price}</small>
+            <small>
+              <strong>Avaliable Quantiry: {quantity}</strong>
+            </small>
+            <small>
+              <strong>Price Per Unit Tk: {price}</strong>
+            </small>
           </div>
           <input
             onBlur={(e) => setOrder(e.target.value)}

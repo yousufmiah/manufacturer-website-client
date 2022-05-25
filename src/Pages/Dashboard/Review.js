@@ -90,7 +90,9 @@ const Review = () => {
                     key={i}
                     onClick={() => setPage(number)}
                     className={`ml-2 ${
-                      page === number ? "bg-primary text-light" : "bg-light"
+                      page === number
+                        ? "bg-primary p-2 font-bold text-white"
+                        : "bg-light"
                     }`}
                   >
                     {number + 1}

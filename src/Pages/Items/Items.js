@@ -8,13 +8,6 @@ const Items = () => {
   //   console.log(items);
 
   const sliceItems = items.slice(0, 6);
-  // console.log(sliceItems);
-
-  const navigate = useNavigate();
-  const handleAllItems = () => {
-    navigate("/allItems");
-    // console.log("Clicked");
-  };
 
   return (
     <div>
@@ -33,7 +26,6 @@ const Items = () => {
         <div className="text-center">
           <Link
             to="/allitems"
-            onClick={() => handleAllItems()}
             className="btn btn-secondary text-primary text-bold text-2xl px-5 my-5"
           >
             All Items

@@ -28,6 +28,7 @@ import Purchase from "./Pages/Dashboard/Purchase";
 import AllItems from "./Pages/Items/Allitems";
 import ManageItems from "./Pages/Dashboard/ManageItems";
 import AllUsers from "./Pages/Dashboard/AllUsers";
+import PlaceOrder from "./Pages/Dashboard/PlaceOrder";
 // import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
 
           <Route path="history" element={<History></History>}></Route>
           <Route path="additem" element={<AddItem></AddItem>}></Route>
+          <Route path="placeorder" element={<PlaceOrder></PlaceOrder>}></Route>
 
           {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
 

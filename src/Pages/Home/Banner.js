@@ -1,5 +1,6 @@
 import React from "react";
 import computer from "../../assets/images/computer.jpg";
+import flower from "../../assets/images/flower.jpg";
 
 const Banner = () => {
   return (
@@ -16,7 +17,28 @@ const Banner = () => {
               made our factory to improve your experience and feel better in the
               modern Technology, Thanks for with us.
             </p>
-            <button class="btn btn-primary">Get Started</button>
+            {/* <!-- The button to open modal --> */}
+            <label for="my-modal-6" class="btn modal-button btn-primary">
+              Get Started
+            </label>
+            {/* <!-- Put this part before </body> tag --> */}
+            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+            <div class="modal modal-bottom sm:modal-middle md:modal-middle">
+              <div class="modal-box text-center">
+                <h3 class="font-bold text-4xl mb-5 text-primary ">
+                  Congratulations to visit the website!!!
+                </h3>
+                <div>
+                  <img src={flower} alt="" />
+                </div>
+                <div class="modal-action">
+                  <label for="my-modal-6" class="btn">
+                    Go
+                  </label>
+                </div>
+              </div>
+            </div>
+            {/* modal end */}
           </div>
         </div>
       </div>
