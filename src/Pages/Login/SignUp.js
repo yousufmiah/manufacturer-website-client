@@ -52,7 +52,7 @@ const SignUp = () => {
     );
   }
   if (user || googleUser) {
-    console.log(user || googleUser);
+    // console.log(user || googleUser);
     // navigate("/appointment");
   }
   if (token) {
@@ -61,10 +61,11 @@ const SignUp = () => {
   }
 
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
+
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    console.log("update done");
+    // console.log("update done");
   };
 
   return (

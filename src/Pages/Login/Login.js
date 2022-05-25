@@ -64,7 +64,8 @@ const Login = () => {
 
   // onsubmit=======================
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+
     setResetEmail(data.email);
     signInWithEmailAndPassword(data.email, data.password);
   };
@@ -182,10 +183,7 @@ const Login = () => {
           <p>
             <small>
               Forget Password?
-              <button
-                onClick={handleSubmit(onSubmit)}
-                className="text-blue-600"
-              >
+              <button onClick={resetPassword} className="text-blue-600">
                 Reset Password
               </button>
             </small>

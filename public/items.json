@@ -7,39 +7,39 @@
     "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
 }, 
 {
-    "name":"Mouse",
-    "description": "Nice and easy to use",
-    "quantity": 500,
-    "price": "300",
-    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+    "name":"HP Pen-drive",
+    "description": "High quality and long lasting",
+    "quantity": 750,
+    "price": "550",
+    "img":"https://i.ibb.co/SQ4B7hC/hp-pendrive.jpg"
 },
 {
-    "name":"Mouse",
-    "description": "Nice and easy to use",
-    "quantity": 500,
-    "price": "300",
-    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+    "name":"Processor",
+    "description": "A modern processor with warranty",
+    "quantity": 1000,
+    "price": "3000",
+    "img":"https://i.ibb.co/M1vn1gB/processor.jpg"
 },
 {
-    "name":"Mouse",
-    "description": "Nice and easy to use",
-    "quantity": 500,
-    "price": "300",
-    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+    "name":"Cooling-fan",
+    "description": "Heavy duty cooling fan for computer.",
+    "quantity": 800,
+    "price": "200",
+    "img":"https://i.ibb.co/cySjzgc/cooling-fan2.jpg"
 },
 {
-    "name":"Mouse",
-    "description": "Nice and easy to use",
-    "quantity": 500,
-    "price": "300",
-    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+    "name":"SSD",
+    "description": "High quality SSD with warranty",
+    "quantity": 400,
+    "price": "4000",
+    "img":"https://i.ibb.co/dt7bGmD/ssd.jpg"
 },
 {
-    "name":"Mouse",
-    "description": "Nice and easy to use",
-    "quantity": 500,
-    "price": "300",
-    "img":"https://i.ibb.co/Mhx1QHx/mouse.jpg"
+    "name":"Hard Disk",
+    "description": "A very quality full hard disk drive",
+    "quantity": 250,
+    "price": "3500",
+    "img":"https://i.ibb.co/ZLJK0rJ/Hard-Disk.jpg"
 }
 
 ]

@@ -29,6 +29,7 @@ const Navbar = () => {
       <li>
         <NavLink to="/profile">Profile</NavLink>
       </li>
+
       {user && (
         <li>
           <NavLink to="/dashboard">Dashboard</NavLink>
@@ -87,9 +88,14 @@ const Navbar = () => {
                     <span className="badge ">New</span>
                   </a>
                 </li> */}
-                <li className="mt-16 text-2xl">
+                <li className="mt-12 text-2xl">
                   <Link to="/myitems" className="text-xl">
                     My Items
+                  </Link>
+                </li>
+                <li className="text-2xl">
+                  <Link to="/portfolio" className="text-xl">
+                    Portfolio
                   </Link>
                 </li>
 

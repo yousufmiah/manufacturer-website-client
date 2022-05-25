@@ -23,19 +23,23 @@ const DashBoard = () => {
           {/* <!-- Sidebar content here --> */}
 
           <li>
+            <Link to="/dashboard/purchase">Purchase</Link>
+          </li>
+          <li>
             <Link to="/dashboard/history">History</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/additem">Add Item</Link>
           </li>
 
           {/* {admin && ( */}
           <>
             <li>
-              <Link to="/dashboard/users">All Users</Link>
+              <Link to="/dashboard/allusers">All Users</Link>
             </li>
-            {/* <li>
-              <Link to="/dashboard/addDoctor">Add a Doctor</Link>
-            </li> */}
+
             <li>
-              <Link to="/dashboard/manageDoctor">Manage Items</Link>
+              <Link to="/dashboard/manageItems">Manage Items</Link>
             </li>
           </>
           {/* )} */}

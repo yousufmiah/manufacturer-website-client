@@ -4,24 +4,31 @@ import About from "./Pages/About/About";
 import DashBoard from "./Pages/Dashboard/DashBoard";
 import History from "./Pages/Dashboard/History";
 
-import Users from "./Pages/Dashboard/Users";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/Login/SignUp";
 import Navbar from "./Pages/Shared/Navbar";
 
+import RequireAdmin from "./Pages/Login/RequireAdmin";
 import RequireAuth from "./Pages/Login/RequireAuth";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import RequireAdmin from "./Pages/Login/RequireAdmin";
+
 import Blogs from "./Pages/Blogs/Blogs";
 import NotFound from "./Pages/Shared/NotFount";
-import Purchase from "./Pages/Items/Purchase";
+
 import ViewReview from "./Pages/Dashboard/ViewReview";
 import Review from "./Pages/Dashboard/Review";
 import MyItems from "./Pages/MyItems/MyItems";
-import Allitems from "./Pages/Items/Allitems";
+
 import Profile from "./Pages/Profile";
+import Portfolio from "./Pages/Portfolio";
+import AddItem from "./Pages/Items/AddItem";
+import Purchase from "./Pages/Dashboard/Purchase";
+import AllItems from "./Pages/Items/Allitems";
+import ManageItems from "./Pages/Dashboard/ManageItems";
+import AllUsers from "./Pages/Dashboard/AllUsers";
 // import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
@@ -30,34 +37,44 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="home" element={<Home />} />
+        <Route path="blogs" element={<Blogs />} />
         <Route path="about" element={<About />} />
-        <Route path="/purchase" element={<Purchase />} />
+
         <Route path="review" element={<Review />} />
         <Route path="viewReview" element={<ViewReview />} />
-        <Route path="allitems" element={<Allitems />} />
+        <Route path="allitems" element={<AllItems></AllItems>}></Route>
+
         <Route path="myitems" element={<MyItems />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="portfolio" element={<Portfolio />} />
 
         <Route path="dashboard" element={<DashBoard />}>
-          <Route path="history" element={<History></History>}></Route>
-          {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
-          <Route path="users" element={<Users></Users>}></Route>
+          <Route path="purchase" element={<Purchase></Purchase>}></Route>
+          <Route path="allusers" element={<AllUsers></AllUsers>}></Route>
 
+          <Route path="history" element={<History></History>}></Route>
+          <Route path="additem" element={<AddItem></AddItem>}></Route>
           {/* <Route
-            path="addDoctor"
-            element={
-              <RequireAdmin>
-                <AddDoctor></AddDoctor>
-              </RequireAdmin>
-            }
+            path="manageitems"
+            element={<ManageItems></ManageItems>}
           ></Route> */}
+
+          {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
+
+          <Route
+            path="manageitems"
+            element={
+              <RequireAuth>
+                <ManageItems></ManageItems>
+              </RequireAuth>
+            }
+          ></Route>
           {/* <Route
-            path="manageDoctor"
+            path="manageitems"
             element={
               <RequireAdmin>
-                <ManageDoctors></ManageDoctors>
+                <ManageItems></ManageItems>
               </RequireAdmin>
             }
           ></Route> */}
@@ -67,7 +84,7 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </div>
   );
 }

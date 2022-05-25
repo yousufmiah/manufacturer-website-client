@@ -13,19 +13,18 @@ const Review = () => {
   const navigate = useNavigate();
 
   const name = user?.displayName;
-  // const img = "https://i.ibb.co/M8pgDX9/1024px-User-avatar-svg.png";
   const img = "https://i.ibb.co/HFq3Y4L/peopel.jpg";
   const time = Date().toLocaleString();
   const description = textField;
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviewCount")
+    fetch("https://safe-anchorage-26846.herokuapp.com/reviewCount")
       .then((res) => res.json())
       .then((data) => setPageCount(Math.ceil(data.count / 3)));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?page=${page}`)
+    fetch(`https://safe-anchorage-26846.herokuapp.com/reviews?page=${page}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [page]);
@@ -35,7 +34,7 @@ const Review = () => {
       navigate("/login");
     } else {
       const review = { name, img, time, description };
-      fetch("http://localhost:5000/review", {
+      fetch("https://safe-anchorage-26846.herokuapp.com/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -52,7 +51,7 @@ const Review = () => {
   };
 
   return (
-    <div class="card w-full bg-base-200 shadow-xl">
+    <div class="card my-20 w-full bg-base-200 shadow-xl">
       <div class="card-body">
         <div className="text-center">
           <div className="text-center text-center mx-auto w-1/2 mt-5">

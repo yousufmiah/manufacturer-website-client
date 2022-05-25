@@ -1,30 +1,41 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 
-const item = ({ item }) => {
+const Item = ({ item }) => {
   const { _id, name, description, quantity, img, price } = item;
-  // const [order, setOrder] = useState(orderQuantity);
-  // const navigate = useNavigate();
+  const [order, setOrder] = useState(10);
+  const navigate = useNavigate();
+  const [user, loading] = useAuthState(auth);
 
-  // const placeOrder = () => {
-  //   if (order >= 10 && order <= availableQuantity) {
-  //     const newOrder = part;
-  //     newOrder.quantity = order;
-  //     newOrder.email = email;
-  //     newOrder.time = Date().toLocaleString();
-  //     fetch(`http://localhost:5000/orders`, {
-  //       method: "POST",
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(newOrder),
-  //     });
-  //   }
-  // };
+  const placeOrder = () => {
+    if (order >= 10 && order <= quantity) {
+      const newOrder = item;
+      newOrder.quantity = order;
+      newOrder.email = user?.email;
+      newOrder.time = Date().toLocaleString();
+
+      fetch(`https://safe-anchorage-26846.herokuapp.com/orders-item`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newOrder),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          alert("Order Successfully");
+          navigate("/dashboard/purchase");
+        });
+    } else {
+      alert("below items or out of available quantity");
+    }
+  };
   return (
     <div>
       <div class="card bg-base-100 shadow-xl">
-        <div className="flex justify-center">
+        <div className="text-center items-center mx-auto p-4 w-48 h-48">
           <img src={img} alt="pic" class="rounded-xl" />
         </div>
         <div class="card-body items-center text-center">
@@ -35,14 +46,15 @@ const item = ({ item }) => {
             <small>Price Per Unit Tk: {price}</small>
           </div>
           <input
+            onBlur={(e) => setOrder(e.target.value)}
             type="text"
             placeholder="Minimum Order 10"
             class="input input-bordered w-full text-center"
           />
           <div class="card-actions ">
-            <Link to="/purchase" class="mt-3 btn btn-primary w-full ">
+            <button onClick={placeOrder} class="mt-3 btn btn-primary w-full ">
               Place Order
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -50,54 +62,4 @@ const item = ({ item }) => {
   );
 };
 
-export default item;
-
-// import Swal from "sweetalert2";
-
-// const Item = ({ item }) => {
-//   // console.log(item);
-//   const { _id, name, description, quantity, img, price } = item;
-
-//   const handleUpdateItem = (id) => {
-//     // const updatedItem = item;
-//     // updatedItem.quantity = quantity - 1;
-//     // send data to the server
-//     //   if (quantity > 0) {
-//     //     const url = `http://localhost:5000/item/${id}`;
-//     //     fetch(url, {
-//     //       method: "PUT",
-//     //       headers: {
-//     //         "content-type": "application/json",
-//     //       },
-//     //       body: JSON.stringify(updatedItem),
-//     //     });
-//     //     Swal.fire({
-//     //       icon: "success",
-//     //       text: "Delivered Success.",
-//     //       showConfirmButton: false,
-//     //       timer: 2000,
-//     //     });
-//     //   }
-//   };
-
-//   return (
-//     <div class="card w-96 bg-base-100 shadow-xl">
-//       <figure class="px-10 pt-10">
-//         <img
-//           src="https://api.lorem.space/image/shoes?w=400&h=225"
-//           alt="Shoes"
-//           class="rounded-xl"
-//         />
-//       </figure>
-//       <div class="card-body items-center text-center">
-//         <h2 class="card-title">Shoes!</h2>
-//         <p>If a dog chews shoes whose shoes does he choose?</p>
-//         <div class="card-actions">
-//           <button class="btn btn-primary">Buy Now</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Item;
+export default Item;

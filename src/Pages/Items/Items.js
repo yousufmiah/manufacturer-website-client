@@ -8,7 +8,7 @@ const Items = () => {
   //   console.log(items);
 
   const sliceItems = items.slice(0, 6);
-  console.log(sliceItems);
+  // console.log(sliceItems);
 
   const navigate = useNavigate();
   const handleAllItems = () => {
@@ -18,8 +18,8 @@ const Items = () => {
 
   return (
     <div>
-      <div>
-        <h2 className="text-primary text-xl md:text-4xl font-bold px-10 mt-20 text-center">
+      <div className="my-20">
+        <h2 className="text-primary text-xl md:text-4xl font-bold px-10 text-center">
           Our Items are available here
         </h2>
       </div>
@@ -41,8 +41,6 @@ const Items = () => {
         </div>
       </div>
     </div>
-
-    // </div>
   );
 };
 
