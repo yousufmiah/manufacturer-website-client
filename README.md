@@ -14,7 +14,9 @@ This project is [JM Computer](https://tools-478a3.web.app).
 
 [Server side git](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-yousufmiah.git).
 
-## Admin details
+## ==================
+
+## Admin information
 
 #### Name: Yousuf Miah
 
