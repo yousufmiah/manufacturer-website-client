@@ -14,8 +14,10 @@ This project is [JM Computer](https://tools-478a3.web.app).
 
 [Server side git](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-yousufmiah.git).
 
-### StackOver Flow link
+### Admin details
 
-[Name](Yousuf Miah).
-[Addmin](yousufweb99@gmail.com).
-[Password](123456).
+## Name: Yousuf Miah
+
+## Email: yousufweb99@gmail.com
+
+## Password: 123456
