@@ -5,7 +5,7 @@ const useHookData = () => {
   // console.log(items);
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://safe-anchorage-26846.herokuapp.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [items]);

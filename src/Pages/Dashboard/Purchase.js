@@ -7,7 +7,7 @@ const Purchase = () => {
   // console.log(orders);
 
   useEffect(() => {
-    fetch("http://localhost:5000/get-orders-items")
+    fetch("https://safe-anchorage-26846.herokuapp.com/get-orders-items")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -24,7 +24,7 @@ const Purchase = () => {
 
     const proceed = window.confirm("Are you sure to Cancel?");
     if (proceed) {
-      const url = `http://localhost:5000/d-order-items/${id}`;
+      const url = `https://safe-anchorage-26846.herokuapp.com/d-order-items/${id}`;
       console.log(url);
       fetch(url, {
         method: "DELETE",
