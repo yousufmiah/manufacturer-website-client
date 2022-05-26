@@ -37,7 +37,7 @@ const AddItem = () => {
             img: img,
           };
           // send to your database
-          fetch("https://safe-anchorage-26846.herokuapp.com/items", {
+          fetch("http://localhost:5000/items", {
             method: "POST",
             headers: {
               "content-type": "application/json",

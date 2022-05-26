@@ -16,7 +16,7 @@ const AllItem = ({ item }) => {
       newOrder.email = user?.email;
       newOrder.time = Date().toLocaleString();
 
-      fetch(`https://safe-anchorage-26846.herokuapp.com/orders-item`, {
+      fetch(`http://localhost:5000/orders-item`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

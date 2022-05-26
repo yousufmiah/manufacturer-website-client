@@ -14,7 +14,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
 
-  const url = `https://safe-anchorage-26846.herokuapp.com/orders/${id}`;
+  const url = `http://localhost:5000/orders/${id}`;
 
   // console.log(url);
 
@@ -60,6 +60,7 @@ const Payment = () => {
         <h2>5555 5555 5555 4444</h2>
         <h2>Any future date </h2>
         <h2>Any 3 digit</h2>
+        <h2>Any 5 digit</h2>
       </div>
     </div>
   );

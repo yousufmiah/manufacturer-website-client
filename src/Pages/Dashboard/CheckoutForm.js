@@ -50,6 +50,7 @@ const CheckoutForm = ({ order }) => {
     setCardError(error?.message || "");
     setSuccess("");
     setProcessing(true);
+
     // confirm card payment ==============
     const { paymentIntent, intentError } = await stripe.confirmCardPayment(
       clientSecret,
@@ -70,13 +71,15 @@ const CheckoutForm = ({ order }) => {
       setCardError("");
       setTransactionId(paymentIntent.id);
       console.log(paymentIntent);
+
       setSuccess("Congrats! Your payment is completed");
 
       //store payment on database=====================
       const payment = {
-        appointment: _id,
+        order: _id,
         transactionId: paymentIntent.id,
       };
+
       fetch(`http://localhost:5000/order/${_id}`, {
         method: "PATCH",
         headers: {
@@ -125,7 +128,7 @@ const CheckoutForm = ({ order }) => {
         <div className="text-green-500">
           <p>{success}</p>
           <p>
-            Your transaction Id:{" "}
+            Your transaction Id:
             <span className="text-orange-500 font-bold">{transactionId}</span>
           </p>
         </div>
