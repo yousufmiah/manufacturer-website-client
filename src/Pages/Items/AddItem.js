@@ -37,7 +37,7 @@ const AddItem = () => {
             img: img,
           };
           // send to your database
-          fetch("https://safe-anchorage-26846.herokuapp.com/items", {
+          fetch("http://localhost:5000/items", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -65,9 +65,9 @@ const AddItem = () => {
       <h2 className="text-3xl font-bold text-primary">Add New Product</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* =====name start==== */}
-        <div class="form-control w-full ">
-          <label class="label">
-            <span class="label-text font-bold">Name</span>
+        <div className="form-control w-full ">
+          <label className="label">
+            <span className="label-text font-bold">Name</span>
           </label>
           <input
             type="text"
@@ -80,9 +80,9 @@ const AddItem = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.name?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.name.message}
               </span>
             )}
@@ -90,9 +90,9 @@ const AddItem = () => {
         </div>
         {/* ========name end========= */}
         {/* =====description start==== */}
-        <div class="form-control w-full ">
-          <label class="label">
-            <span class="label-text font-bold">Description</span>
+        <div className="form-control w-full ">
+          <label className="label">
+            <span className="label-text font-bold">Description</span>
           </label>
           <input
             type="text"
@@ -105,9 +105,9 @@ const AddItem = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.description?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.description.message}
               </span>
             )}
@@ -115,9 +115,9 @@ const AddItem = () => {
         </div>
         {/* ========description end========= */}
         {/* =====Quantity start==== */}
-        <div class="form-control w-full ">
-          <label class="label">
-            <span class="label-text font-bold">Quantity</span>
+        <div className="form-control w-full ">
+          <label className="label">
+            <span className="label-text font-bold">Quantity</span>
           </label>
           <input
             type="number"
@@ -130,9 +130,9 @@ const AddItem = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.quantity?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.quantity.message}
               </span>
             )}
@@ -140,9 +140,9 @@ const AddItem = () => {
         </div>
         {/* ========quantity end========= */}
         {/* =====Unit price start==== */}
-        <div class="form-control w-full ">
-          <label class="label">
-            <span class="label-text font-bold">Unit Price</span>
+        <div className="form-control w-full ">
+          <label className="label">
+            <span className="label-text font-bold">Unit Price</span>
           </label>
           <input
             type="number"
@@ -155,9 +155,9 @@ const AddItem = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.price?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.price.message}
               </span>
             )}
@@ -166,9 +166,9 @@ const AddItem = () => {
         {/* ========quantity end========= */}
 
         {/* =====photo load==== */}
-        <div class="form-control w-full ">
-          <label class="label">
-            <span class="label-text font-bold">Photo</span>
+        <div className="form-control w-full ">
+          <label className="label">
+            <span className="label-text font-bold">Photo</span>
           </label>
           <input
             type="file"
@@ -180,9 +180,9 @@ const AddItem = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.name?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.name.message}
               </span>
             )}

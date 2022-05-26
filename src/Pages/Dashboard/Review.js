@@ -18,13 +18,13 @@ const Review = () => {
   const description = textField;
 
   useEffect(() => {
-    fetch("https://safe-anchorage-26846.herokuapp.com/reviewCount")
+    fetch("http://localhost:5000/reviewCount")
       .then((res) => res.json())
       .then((data) => setPageCount(Math.ceil(data.count / 3)));
   }, []);
 
   useEffect(() => {
-    fetch(`https://safe-anchorage-26846.herokuapp.com/reviews?page=${page}`)
+    fetch(`http://localhost:5000/reviews?page=${page}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [page]);
@@ -34,7 +34,7 @@ const Review = () => {
       navigate("/login");
     } else {
       const review = { name, img, time, description };
-      fetch("https://safe-anchorage-26846.herokuapp.com/review", {
+      fetch("http://localhost:5000/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -51,8 +51,8 @@ const Review = () => {
   };
 
   return (
-    <div class="card my-20 w-full bg-base-200 shadow-xl">
-      <div class="card-body">
+    <div className="card my-20 w-full bg-base-200 shadow-xl">
+      <div className="card-body">
         <div className="text-center">
           <div className="text-center mx-auto w-1/2 mt-5">
             <div>
@@ -61,12 +61,12 @@ const Review = () => {
               </h2>
             </div>
 
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Add Your Comments</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Add Your Comments</span>
               </label>
               <textarea
-                class="textarea textarea-bordered"
+                className="textarea textarea-bordered"
                 placeholder="write here your review"
                 onBlur={(e) => setDescription(e.target.value)}
               ></textarea>

@@ -17,7 +17,7 @@ const Item = ({ item }) => {
         newOrder.email = user?.email;
         newOrder.time = Date().toLocaleString();
 
-        fetch(`https://safe-anchorage-26846.herokuapp.com/orders-item`, {
+        fetch(`http://localhost:5000/orders-item`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -40,12 +40,12 @@ const Item = ({ item }) => {
   };
   return (
     <div>
-      <div class="card bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <div className="text-center items-center mx-auto p-4 w-48 h-48">
-          <img src={img} alt="pic" class="rounded-xl" />
+          <img src={img} alt="pic" className="rounded-xl" />
         </div>
-        <div class="card-body items-center text-center">
-          <h2 class="card-title text-2xl font-bold">{name}</h2>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-2xl font-bold">{name}</h2>
           <p>{description}</p>
           <div className="w-full flex flex-col md:flex-row md:justify-between">
             <small>
@@ -59,10 +59,13 @@ const Item = ({ item }) => {
             onBlur={(e) => setOrder(e.target.value)}
             type="text"
             placeholder="Minimum Order 10"
-            class="input input-bordered w-full text-center"
+            className="input input-bordered w-full text-center"
           />
-          <div class="card-actions ">
-            <button onClick={placeOrder} class="mt-3 btn btn-primary w-full ">
+          <div className="card-actions ">
+            <button
+              onClick={placeOrder}
+              className="mt-3 btn btn-primary w-full "
+            >
               Place Order
             </button>
           </div>

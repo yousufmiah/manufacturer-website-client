@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 const Purchase = () => {
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
-  console.log(orders);
+  // console.log(orders);
 
   useEffect(() => {
-    fetch("https://safe-anchorage-26846.herokuapp.com/get-orders-items")
+    fetch("http://localhost:5000/get-orders-items")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -24,7 +24,7 @@ const Purchase = () => {
 
     const proceed = window.confirm("Are you sure to Cancel?");
     if (proceed) {
-      const url = `https://safe-anchorage-26846.herokuapp.com/d-order-items/${id}`;
+      const url = `http://localhost:5000/d-order-items/${id}`;
       console.log(url);
       fetch(url, {
         method: "DELETE",
@@ -51,6 +51,7 @@ const Purchase = () => {
               <th scope="col">Description</th>
               <th scope="col">Quantity</th>
               <th scope="col">Unit Price</th>
+              <th scope="col">Payment</th>
               <th scope="col">Update</th>
               <th scope="col">Cancel</th>
             </tr>
@@ -73,10 +74,31 @@ const Purchase = () => {
                   <td>{order.description}</td>
                   <td>{order.quantity}</td>
                   <td>Tk {order.price}</td>
+
+                  <td>
+                    {order.price && !order.paid && (
+                      <Link to={`/dashboard/payment/${order._id}`}>
+                        <button className="btn btn-xs btn-success">Pay</button>
+                      </Link>
+                    )}
+                    {order.price && order.paid && (
+                      <div>
+                        <p>
+                          <span className="text-success">Paid</span>
+                        </p>
+                        <p>
+                          Transaction Id:
+                          <span className="text-success">
+                            {order.transactionId}
+                          </span>
+                        </p>
+                      </div>
+                    )}
+                  </td>
                   <td>
                     <button
                       onClick={() => handleUpdateItem(order._id)}
-                      className="btn btn-primary"
+                      className="btn btn-xs btn-primary "
                     >
                       Update
                     </button>
@@ -84,7 +106,7 @@ const Purchase = () => {
                   <td>
                     <button
                       onClick={() => handleDelete(order._id)}
-                      className="btn btn-warning text-white"
+                      className="btn btn-xs btn-warning text-white"
                     >
                       Cancel
                     </button>
@@ -116,6 +138,12 @@ const Purchase = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <h2 className="text-xl mt-5">
+          <strong>Place order</strong> button is under construction. Please
+          check payment by small button of pay with green color, thanks.
+        </h2>
       </div>
     </div>
   );

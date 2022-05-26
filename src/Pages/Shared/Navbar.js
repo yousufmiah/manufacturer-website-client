@@ -6,6 +6,8 @@ import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
+  // console.log(user.email);
+  // console.log(user.displayName);
 
   const logout = () => {
     signOut(auth);
@@ -61,13 +63,13 @@ const Navbar = () => {
               </label>
             </div>
             <div className="dropdown dropdown-end">
-              <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+              <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://api.lorem.space/image/face?hash=33791" />
+                  <img src={user.photoURL} />
                 </div>
               </label>
               <ul
-                tabindex="0"
+                tabIndex="0"
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
@@ -77,21 +79,28 @@ const Navbar = () => {
                       className="btn w-24 btn-ghost btn-circle avatar"
                     >
                       <div className="w-24 rounded-full">
-                        <img src="https://api.lorem.space/image/face?hash=33791" />
+                        <img src={user.photoURL} />
+                        <p>{user.displayName}</p>
+                        <p>{user.email}</p>
                       </div>
                     </label>
                   </a>
                 </li>
 
                 <li className="mt-12 text-2xl">
-                  <Link to="/myitems" className="text-xl">
+                  <p className="text-lg font-bold">{user.displayName}</p>
+                  <p className="text-xs">{user.email}</p>
+                  <Link to="/myitems" className="text-lg">
                     My Items
                   </Link>
                 </li>
                 <li className="text-2xl">
-                  <Link to="/portfolio" className="text-xl">
+                  <Link to="/portfolio" className="text-lg">
                     Portfolio
                   </Link>
+                </li>
+                <li className="text-2xl">
+                  <Link to="/portfolio" className="text-lg"></Link>
                 </li>
 
                 <li>

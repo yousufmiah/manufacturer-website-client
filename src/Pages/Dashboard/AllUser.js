@@ -6,7 +6,7 @@ const AllUser = ({ user, refetch }) => {
   console.log(user);
 
   const makeAdmin = () => {
-    fetch(`https://safe-anchorage-26846.herokuapp.com/user-t/admin/${email}`, {
+    fetch(`http://localhost:5000/user-t/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -32,13 +32,13 @@ const AllUser = ({ user, refetch }) => {
       <td>{email}</td>
       <td>
         {role !== "admin" && (
-          <button onClick={makeAdmin} class="btn btn-xs">
+          <button onClick={makeAdmin} className="btn btn-xs">
             Make Admin
           </button>
         )}
       </td>
       <td>
-        <button class="btn btn-xs">Remove User</button>
+        <button className="btn btn-xs">Remove User</button>
       </td>
     </tr>
   );

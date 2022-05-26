@@ -15,7 +15,7 @@ const AllItems = () => {
     <div>
       <div className="my-20">
         <h2 className="text-primary text-xl md:text-4xl font-bold px-10 text-center">
-          Our Items are available
+          All Products are available Here
         </h2>
       </div>
       <div>

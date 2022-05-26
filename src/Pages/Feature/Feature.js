@@ -6,8 +6,8 @@ import { VscFeedback } from "react-icons/vsc";
 
 const Feature = () => {
   return (
-    <div class="card my-16 w-full bg-base-200 shadow-xl">
-      <div class="card-body">
+    <div className="card my-16 w-full bg-base-200 shadow-xl">
+      <div className="card-body">
         <div className="text-center">
           <div className="mb-10">
             <h2 className="text-xl md:text-4xl font-bold text-primary">
@@ -58,7 +58,7 @@ const Feature = () => {
                 <h2 className="text-base md:text-xl text-primary font-bold">
                   Have any question about us or get a products questions?
                 </h2>
-                <p ckassName="text-blue-500">Don't hesitate to contact us</p>
+                <p className="text-blue-500">Don't hesitate to contact us</p>
               </div>
               <div className="flex flex-col md:flex-row">
                 <div className="mr-5">

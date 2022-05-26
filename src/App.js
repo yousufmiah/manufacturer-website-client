@@ -29,7 +29,7 @@ import AllItems from "./Pages/Items/Allitems";
 import ManageItems from "./Pages/Dashboard/ManageItems";
 import AllUsers from "./Pages/Dashboard/AllUsers";
 import PlaceOrder from "./Pages/Dashboard/PlaceOrder";
-// import Payment from "./Pages/Dashboard/Payment";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -55,8 +55,7 @@ function App() {
           <Route path="history" element={<History></History>}></Route>
           <Route path="additem" element={<AddItem></AddItem>}></Route>
           <Route path="placeorder" element={<PlaceOrder></PlaceOrder>}></Route>
-
-          {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
 
           <Route
             path="manageitems"

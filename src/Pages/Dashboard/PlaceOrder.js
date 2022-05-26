@@ -6,8 +6,8 @@ const PlaceOrder = () => {
       <h2 className="text-4xl text-primary font-bold text-center mb-5">
         Place order
       </h2>
-      <div class="overflow-x-auto">
-        <table class="table w-1/2 mx-auto">
+      <div className="overflow-x-auto">
+        <table className="table w-1/2 mx-auto">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -39,6 +39,12 @@ const PlaceOrder = () => {
         </table>
       </div>
       <button className="btn btn-primary">Payment</button>
+      <div>
+        <h2 className="text-xl mt-5">
+          <strong>Payment</strong> button is under construction. Please go back
+          & check payment by small button of pay with green color, thanks.
+        </h2>
+      </div>
     </div>
   );
 };
