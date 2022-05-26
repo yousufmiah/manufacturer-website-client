@@ -6,7 +6,7 @@ const ManageItems = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://safe-anchorage-26846.herokuapp.com/items")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -23,7 +23,7 @@ const ManageItems = () => {
 
     const proceed = window.confirm("Are you sure to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/d-items/${id}`;
+      const url = `https://safe-anchorage-26846.herokuapp.com/d-items/${id}`;
       console.log(url);
       fetch(url, {
         method: "DELETE",
