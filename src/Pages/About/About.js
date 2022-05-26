@@ -41,37 +41,6 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="w-1/2 mx-auto my-10 text-xl">
-        <p>
-          <strong>information about this site</strong>
-          <br />
-          - Main admin is yousufweb99@gmail.com password 123456 <br />
-          who has full power of admin role.
-          <br />
-          <br />
-          - only Main Admin can do everything in this site. #### -like- add new
-          product, delete product from main data etc.,
-          <br />
-          <br />
-          - admin can make a admin others user but this admin have no full
-          power.
-          <br />
-          <br />
-          - if user want to get full power like main admin. It needs to be
-          verified email.
-          <br />
-          <br />
-          - user can order, order delete, payment by card
-          <br />
-          <br />
-          -half admin can add new product, order place, order cancel. but he/she
-          can not enter manage item.
-          <br />
-          <br />
-          -Thank you very much for your visiting in the website which is highly
-          appreciated.
-        </p>
-      </div>
     </div>
   );
 };
