@@ -3,6 +3,8 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import auth from "../../firebase.init";
+import flower from "../../assets/images/flower.jpg";
+import logo from "../../assets/logo/logo.png";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -65,7 +67,11 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={user.photoURL} />
+                  {user.photoURL ? (
+                    <img src={user.photoURL} />
+                  ) : (
+                    <img src={flower} />
+                  )}
                 </div>
               </label>
               <ul
@@ -79,7 +85,11 @@ const Navbar = () => {
                       className="btn w-24 btn-ghost btn-circle avatar"
                     >
                       <div className="w-24 rounded-full">
-                        <img src={user.photoURL} />
+                        {user.photoURL ? (
+                          <img src={user.photoURL} />
+                        ) : (
+                          <img src={flower} />
+                        )}
                         <p>{user.displayName}</p>
                         <p>{user.email}</p>
                       </div>
@@ -148,6 +158,9 @@ const Navbar = () => {
           >
             {menuItems}
           </ul>
+        </div>
+        <div>
+          <img className="w-24 h-24" src={logo} alt="" />
         </div>
         <a className="btn btn-ghost normal-case text-xl">JM Computers</a>
       </div>

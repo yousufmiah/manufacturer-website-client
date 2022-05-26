@@ -23,3 +23,21 @@ This project is [JM Computer](https://tools-478a3.web.app).
 #### Email: yousufweb99@gmail.com
 
 #### Password: 123456
+
+## information
+
+### Main admin is yousufweb99@gmail.com password 123456 who has full power of admin role.
+
+#### --only Main Admin can do everything in this site.
+
+#### -like- add new product, delete product from main data etc.,
+
+#### - admin can make a admin others user but this admin have no full power.
+
+#### - if user want to get full power like main admin. It needs to be verified email.
+
+#### - user can order, order delete, payment by card
+
+#### - half admin can add new product, order place, order cancel. but he/she can not enter manage item.
+
+### Thank you very much for your visiting in the website which is highly appreciated.

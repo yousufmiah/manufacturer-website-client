@@ -11,7 +11,7 @@ const Banner = () => {
             <img src={computer} className=" rounded-lg shadow-2xl" />
           </div>
           <div className="w-full md:w-1/2">
-            <h1 className="text-5xl font-bold">Welcome to Our site...</h1>
+            <h1 className="text-5xl font-bold">Welcome to our site...</h1>
             <p className="py-6">
               We provide your best choice of computer accessories, which are
               made our factory to improve your experience and feel better in the
