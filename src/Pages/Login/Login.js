@@ -73,9 +73,10 @@ const Login = () => {
   // forget or reset password====================
   const resetPassword = () => {
     // console.log(resetEmail);
+    const checkEmail = prompt("Type your email");
 
-    if (resetEmail) {
-      sendPasswordResetEmail(resetEmail);
+    if (checkEmail) {
+      sendPasswordResetEmail(checkEmail);
       toast("Sent email");
     } else {
       toast("Please enter your email address.");
