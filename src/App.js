@@ -30,6 +30,7 @@ import ManageItems from "./Pages/Dashboard/ManageItems";
 import AllUsers from "./Pages/Dashboard/AllUsers";
 import PlaceOrder from "./Pages/Dashboard/PlaceOrder";
 import Payment from "./Pages/Dashboard/Payment";
+import Allorders from "./Pages/Dashboard/Allorders";
 
 function App() {
   return (
@@ -42,17 +43,26 @@ function App() {
         <Route path="about" element={<About />} />
 
         <Route path="review" element={<Review />} />
-        <Route path="viewReview" element={<ViewReview />} />
+
         <Route path="allitems" element={<AllItems></AllItems>}></Route>
 
         <Route path="profile" element={<Profile />} />
         <Route path="portfolio" element={<Portfolio />} />
 
-        <Route path="dashboard" element={<DashBoard />}>
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <DashBoard />
+            </RequireAuth>
+          }
+        >
           <Route path="purchase" element={<Purchase></Purchase>}></Route>
+          <Route path="profile" element={<Profile />} />
           <Route path="allusers" element={<AllUsers></AllUsers>}></Route>
+          <Route path="allorder" element={<Allorders />}></Route>
 
-          <Route path="history" element={<History></History>}></Route>
+          <Route path="review" element={<Review></Review>}></Route>
           <Route path="additem" element={<AddItem></AddItem>}></Route>
           <Route path="placeorder" element={<PlaceOrder></PlaceOrder>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>

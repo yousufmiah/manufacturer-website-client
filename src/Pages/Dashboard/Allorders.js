@@ -3,17 +3,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
-const Purchase = () => {
+const Allorders = () => {
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
-  const [user, loading] = useAuthState(auth);
 
   // console.log(orders);
 
   useEffect(() => {
-    fetch(
-      `https://safe-anchorage-26846.herokuapp.com/get-orders-items/${user?.email}`
-    )
+    fetch(`https://safe-anchorage-26846.herokuapp.com/get-orders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -46,13 +43,14 @@ const Purchase = () => {
 
   return (
     <div className="text-center">
-      <h3 className="text-2xl font-bold text-primary mb-5">Orders Items</h3>
+      <h3 className="text-2xl font-bold text-primary mb-5">All Users Orders</h3>
       <div>
         <table className="table table-striped">
           <thead>
             <tr className="">
               <th scope="col">Sl. No.</th>
               <th scope="col">Photo</th>
+              <th scope="col">user Name</th>
               <th scope="col">Name</th>
               <th scope="col">Description</th>
               <th scope="col">Quantity</th>
@@ -67,7 +65,7 @@ const Purchase = () => {
               return (
                 <tr>
                   <td className="my-5 " scope="row">
-                    {i + 1}
+                    {order._id}
                   </td>
                   <td>
                     <img
@@ -76,6 +74,7 @@ const Purchase = () => {
                       alt=""
                     />
                   </td>
+                  <td>{order.userName}</td>
                   <td>{order.name}</td>
                   <td>{order.description}</td>
                   <td>{order.quantity}</td>
@@ -155,4 +154,4 @@ const Purchase = () => {
   );
 };
 
-export default Purchase;
+export default Allorders;

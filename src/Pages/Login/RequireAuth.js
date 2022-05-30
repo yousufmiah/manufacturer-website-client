@@ -24,24 +24,24 @@ const RequireAuth = ({ children }) => {
   }
 
   //email verified na hole dokte dibo na
-  if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
-    return (
-      <div className="text-center mt-5">
-        <h3 className="text-red-500">Your Email is Not verified!!</h3>
-        <h5 className="text-green-500">Please verify your email address.</h5>
-        <button
-          className="btn btn-primary"
-          onClick={async () => {
-            await sendEmailVerification();
-            toast("Sent email");
-          }}
-        >
-          Send Verification Email
-        </button>
-        <ToastContainer></ToastContainer>
-      </div>
-    );
-  }
+  // if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
+  //   return (
+  //     <div className="text-center mt-5">
+  //       <h3 className="text-red-500">Your Email is Not verified!!</h3>
+  //       <h5 className="text-green-500">Please verify your email address.</h5>
+  //       <button
+  //         className="btn btn-primary"
+  //         onClick={async () => {
+  //           await sendEmailVerification();
+  //           toast("Sent email");
+  //         }}
+  //       >
+  //         Send Verification Email
+  //       </button>
+  //       <ToastContainer></ToastContainer>
+  //     </div>
+  //   );
+  // }
 
   return children;
 };

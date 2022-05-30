@@ -15,34 +15,40 @@ const Item = ({ item }) => {
   const year = date.getFullYear();
 
   const placeOrder = () => {
-    if (order) {
-      if (order >= 10 && order <= quantity) {
-        const newOrder = item;
-        newOrder.quantity = order;
-        newOrder.email = user?.email;
-        newOrder.userName = user?.displayName;
+    if (user) {
+      if (order) {
+        if (order >= 10 && order <= quantity) {
+          const newOrder = item;
+          newOrder.quantity = order;
+          newOrder.email = user?.email;
+          newOrder.userName = user?.displayName;
 
-        newOrder.time = day + "/" + month + "/" + year;
-        newOrder._id = Math.floor(Math.random() * 100000000).toString();
+          newOrder.time = day + "/" + month + "/" + year;
+          newOrder._id = Math.floor(Math.random() * 100000000).toString();
 
-        fetch(
-          `https://safe-anchorage-26846.herokuapp.com/orders-item/${user?.email}`,
-          {
-            method: "POST",
-            body: JSON.stringify(newOrder),
-            headers: {
-              "Content-type": "application/json",
-            },
-          }
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            alert(data.success);
-            navigate("/dashboard/purchase");
-          });
+          fetch(
+            `https://safe-anchorage-26846.herokuapp.com/orders-item/${user?.email}`,
+            {
+              method: "POST",
+              body: JSON.stringify(newOrder),
+              headers: {
+                "Content-type": "application/json",
+              },
+            }
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              alert(data.success);
+              navigate("/dashboard/purchase");
+            });
+        } else {
+          alert("Make sure your Order Quantity");
+        }
       } else {
-        alert("Make sure your Order Quantity");
+        alert("Please type number");
       }
+    } else {
+      navigate("/login");
     }
   };
   return (
@@ -63,7 +69,7 @@ const Item = ({ item }) => {
             </small>
           </div>
           <input
-            onBlur={(e) => setOrder(e.target.value)}
+            onChange={(e) => setOrder(e.target.value)}
             type="text"
             placeholder="Minimum Order 10"
             className="input input-bordered w-full text-center"
