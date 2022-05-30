@@ -9,33 +9,40 @@ const Item = ({ item }) => {
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
 
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
   const placeOrder = () => {
     if (order) {
       if (order >= 10 && order <= quantity) {
         const newOrder = item;
-        newOrder.quantity = +order;
+        newOrder.quantity = order;
         newOrder.email = user?.email;
-        newOrder.time = Date().toLocaleString();
+        newOrder.userName = user?.displayName;
 
-        fetch(`https://safe-anchorage-26846.herokuapp.com/orders-item`, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newOrder),
-        })
-          .then((res) => res.json())
+        newOrder.time = day + "/" + month + "/" + year;
+        newOrder._id = Math.floor(Math.random() * 100000000).toString();
+
+        fetch(
+          `https://safe-anchorage-26846.herokuapp.com/orders-item/${user?.email}`,
+          {
+            method: "POST",
+            body: JSON.stringify(newOrder),
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
           .then((data) => {
-            alert("Order Successfully");
+            alert(data.success);
             navigate("/dashboard/purchase");
           });
       } else {
-        alert("below items or out of available quantity");
+        alert("Make sure your Order Quantity");
       }
-    } else if (item.quantity) {
-      alert("Already exist.");
-    } else {
-      alert("Please enter quantity.");
     }
   };
   return (

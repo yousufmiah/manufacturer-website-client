@@ -19,18 +19,17 @@ const ManageItems = () => {
 
   // delete
   const handleDelete = (id) => {
-    console.log(id);
-
+    // console.log(id);
     const proceed = window.confirm("Are you sure to delete?");
     if (proceed) {
       const url = `https://safe-anchorage-26846.herokuapp.com/d-items/${id}`;
-      console.log(url);
+      // console.log(url);
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           const remaining = orders.filter((order) => order._id !== id);
           setOrders(remaining);
         });

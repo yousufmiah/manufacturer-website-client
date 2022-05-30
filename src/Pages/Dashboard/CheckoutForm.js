@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
 
   // strip payment=========
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intents", {
+    fetch("https://safe-anchorage-26846.herokuapp.com/create-payment-intents", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`http://localhost:5000/order/${_id}`, {
+      fetch(`https://safe-anchorage-26846.herokuapp.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
