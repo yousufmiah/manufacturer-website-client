@@ -2,8 +2,6 @@
 
 ## Live link
 
-This project is [JM Computer](https://tools-478a3.web.app).
-
 ##### This is JM computer of Manufacture management system where you can use for product add, devliver, update, delete, payment, to make admin as you like.
 
 Menufaturer Website [JM Computer](https://tools-478a3.web.app).
